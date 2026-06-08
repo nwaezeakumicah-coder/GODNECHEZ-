@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+
+<style>
+body{
+    font-family: Arial;
+    margin:0;
+    background:#f4f6f8;
+}
+
+header{
+    background:#0057FF;
+    color:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.container{
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:15px;
+    margin:10px 0;
+    border-radius:8px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+button{
+    padding:8px 12px;
+    border:none;
+    cursor:pointer;
+}
+
+.delete{
+    background:red;
+    color:white;
+}
+
+.logout{
+    background:black;
+    color:white;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h3>Admin Dashboard</h3>
+<button class="logout" onclick="logout()">Logout</button>
+</header>
+
+<div class="container">
+
+<h4>Total Messages: <span id="total">0</span></h4>
+
+<div id="box"></div>
+
+</div>
+
+<script>
+
+// logout
+function logout() {
+    localStorage.removeItem("token");
+    window.location.href = "admin.html";
+}
+
+// auto load
+window.onload = loadMessages;
+
+async function loadMessages() {
+    const token = localStorage.getItem("token");
+
+    const res = await fetch("http://localhost:5000/api/messages", {
+        headers: { "Authorization": token }
+    });
+
+    const data = await res.json();
+
+    document.getElementById("total").innerText = data.length;
+
+    document.getElementById("box").innerHTML =
+    data.map(m => `
+        <div class="card">
+            <b>${m.name}</b><br>
+            ${m.email}<br>
+            ${m.message}<br><br>
+
+            <button class="delete" onclick="deleteMsg('${m._id}')">
+                Delete
+            </button>
+        </div>
+    `).join("");
+}
+
+// delete message
+async function deleteMsg(id) {
+    const token = localStorage.getItem("token");
+
+    await fetch(`http://localhost:5000/api/messages/${id}`, {
+        method: "DELETE",
+        headers: { "Authorization": token }
+    });
+
+    loadMessages();
+}
+
+</script>
+
+</body>
+</html>

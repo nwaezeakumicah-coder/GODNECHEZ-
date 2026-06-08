@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start Project | GODNECHEZ</title>
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Montserrat,Arial;
+}
+
+body{
+background:#F8FAFC;
+}
+
+/* SECTION */
+.start-project{
+padding:80px 7%;
+text-align:center;
+background:linear-gradient(135deg,#0057FF,#FFD60A);
+color:white;
+}
+
+/* TEXT */
+.start-project h1{
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+.start-project p{
+max-width:650px;
+margin:0 auto 25px;
+line-height:1.6;
+}
+
+/* BUTTON */
+.start-btn{
+display:inline-block;
+background:white;
+color:#0057FF;
+padding:14px 28px;
+border-radius:30px;
+font-weight:700;
+text-decoration:none;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.start-btn:hover{
+background:#111827;
+color:white;
+transform:translateY(-3px);
+}
+
+/* FORM */
+.form-box{
+display:none;
+max-width:500px;
+margin:40px auto 0;
+background:white;
+padding:20px;
+border-radius:15px;
+color:#111;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+text-align:left;
+}
+
+/* INPUTS */
+.form-box input,
+.form-box textarea{
+width:100%;
+padding:12px;
+margin-bottom:10px;
+border:1px solid #ddd;
+border-radius:10px;
+outline:none;
+font-size:14px;
+}
+
+.form-box textarea{
+resize:none;
+}
+
+/* SUBMIT BUTTON */
+.form-box button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#0057FF;
+color:white;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.form-box button:hover{
+background:#FFD60A;
+color:#111;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="start-project">
+
+<h1>Start Your Project</h1>
+
+<p>
+Bring your idea to life with GODNECHEZ Creative Solutions.
+We design flyers, logos, branding, social media posts, and more.
+</p>
+
+<!-- OPEN FORM BUTTON -->
+<button class="start-btn" onclick="toggleForm()">
+Start Project
+</button>
+
+<!-- FORM -->
+<div class="form-box" id="formBox">
+
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="text" id="type" placeholder="Project Type (Logo, Flyer, Branding, etc)">
+    <textarea id="desc" rows="5" placeholder="Describe your project"></textarea>
+
+    <button onclick="submitForm()">Submit Request</button>
+
+</div>
+
+</section>
+
+<script>
+
+/* SHOW / HIDE FORM */
+function toggleForm(){
+    let form = document.getElementById("formBox");
+    form.style.display = form.style.display === "block" ? "none" : "block";
+}
+
+/* FORM SUBMIT (WHATSAPP) */
+function submitForm(){
+
+    let name = document.getElementById("name").value;
+    let type = document.getElementById("type").value;
+    let desc = document.getElementById("desc").value;
+
+    if(!name || !type || !desc){
+        alert("Please fill all fields");
+        return;
+    }
+
+    let message = 
+`🔥 NEW DESIGN REQUEST
+----------------------
+Name: ${name}
+Project Type: ${type}
+Details: ${desc}
+----------------------
+Sent from GODNECHEZ Website`;
+
+    let phone = "2349042481206"; // 🔴 CHANGE TO YOUR NUMBER
+
+    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+
+</script>
+
+</body>
+</html>

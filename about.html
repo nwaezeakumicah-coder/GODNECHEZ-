@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - SIRMIC CREATIVITIES</title>
+
+<style>
+:root{
+    --blue:#0057FF;
+    --yellow:#FFD60A;
+    --white:#FFFFFF;
+    --dark:#1A1A1A;
+    --light:#F6F8FC;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+}
+
+body{
+    background:var(--light);
+    color:var(--dark);
+    line-height:1.6;
+}
+
+/* ================= HEADER ================= */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 8%;
+
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 2px 15px rgba(0,0,0,.05);
+}
+
+.logo{
+    font-weight:800;
+    font-size:1.4rem;
+    color:var(--blue);
+}
+
+nav{
+    display:flex;
+    gap:18px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--blue);
+}
+
+.nav-btn{
+    background:var(--yellow);
+    padding:10px 18px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+    color:var(--dark);
+}
+
+/* ================= HERO ================= */
+.hero{
+    background:linear-gradient(135deg,var(--blue),#2D7DFF,var(--yellow));
+    color:var(--white);
+    text-align:center;
+
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero p{
+    max-width:800px;
+    margin:20px auto 0;
+    opacity:.95;
+}
+
+/* ================= SECTIONS ================= */
+section{
+    padding:80px 8%;
+}
+
+h2{
+    text-align:center;
+    color:var(--blue);
+    margin-bottom:40px;
+}
+
+/* ================= ABOUT CONTENT ================= */
+.about-box{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    color:#555;
+}
+
+/* ================= VALUES ================= */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:var(--white);
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.05);
+    text-align:center;
+}
+
+/* ================= TOOLS ================= */
+.tools{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.tool{
+    background:var(--white);
+    padding:12px 20px;
+    border-radius:30px;
+    box-shadow:0 8px 15px rgba(0,0,0,.05);
+    font-weight:600;
+}
+
+/* ================= CTA ================= */
+.cta{
+    text-align:center;
+    background:linear-gradient(135deg,var(--blue),#2D7DFF);
+    color:var(--white);
+    border-radius:20px;
+    padding:80px 20px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    background:var(--yellow);
+    padding:12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+    color:var(--dark);
+}
+
+/* ================= FOOTER ================= */
+footer{
+    background:#001B5E;
+    color:var(--white);
+    text-align:center;
+    padding:40px 20px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    nav{display:none;}
+    .hero h1{font-size:2rem;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">GODNECHEZ CREATIVE SOLUTIONS</div>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <a href="contact.html" class="nav-btn">Get a Design</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>GODNECHEZ CREATIVE SOLUTIONS</h1>
+    <p>
+        A creative design studio dedicated to helping brands and businesses
+        communicate visually through powerful and effective design solutions.
+    </p>
+</section>
+
+<!-- WHO WE ARE -->
+<section>
+    <h2>Who We Are</h2>
+
+    <div class="about-box">
+        GODNECHEZ CREATIVE SOLUTIONS is a graphic design brand focused on creating
+        visually appealing, strategic, and print-ready designs that help
+        businesses grow, attract customers, and build strong identities.
+    </div>
+</section>
+
+<!-- MISSION -->
+<section>
+    <h2>Our Mission</h2>
+
+    <div class="about-box">
+        To transform ideas into meaningful visual experiences that communicate
+        clearly and elevate every brand we work with.
+    </div>
+</section>
+
+<!-- VALUES -->
+<section>
+    <h2>Core Values</h2>
+
+    <div class="grid">
+        <div class="card">Creativity</div>
+        <div class="card">Professionalism</div>
+        <div class="card">Quality</div>
+        <div class="card">Consistency</div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section>
+    <h2>Why Choose Us</h2>
+
+    <div class="grid">
+        <div class="card">Fast Delivery</div>
+        <div class="card">Affordable Pricing</div>
+        <div class="card">High Quality Designs</div>
+        <div class="card">Client Satisfaction</div>
+    </div>
+</section>
+
+<!-- TOOLS -->
+<section>
+    <h2>Tools We Use</h2>
+
+    <div class="tools">
+         <div class="tool">CorelDRAW</div>
+        <div class="tool">Photoshop</div>
+        <div class="tool">Illustrator</div>
+       
+        <!-- <div class="tool">Figma</div> -->
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Let’s Build Your Brand Together</h2>
+    <a href="contact.html" class="btn">Start a Project</a>
+</section>
+
+<footer>
+    <p>© 2026 GODNECHEZ CREATIVE SOLUTIONS. All rights reserved.</p>
+</footer>
+
+<script>
+// simple highlight effect on cards
+document.querySelectorAll('.card').forEach(card=>{
+    card.addEventListener('mouseenter',()=>{
+        card.style.transform="translateY(-5px)";
+        card.style.transition=".3s";
+    });
+
+    card.addEventListener('mouseleave',()=>{
+        card.style.transform="translateY(0)";
+    });
+});
+</script>
+
+</body>
+</html>

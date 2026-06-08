@@ -1,0 +1,102 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Categories</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Montserrat,Arial;
+}
+
+body{
+background:#F8FAFC;
+}
+
+/* SECTION */
+.categories{
+padding:60px 7%;
+text-align:center;
+}
+
+.categories h2{
+font-size:28px;
+margin-bottom:25px;
+color:#111827;
+}
+
+/* GRID */
+.cat-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:15px;
+}
+
+/* CARD */
+.cat-card{
+background:#0057FF;
+color:white;
+padding:25px 15px;
+border-radius:15px;
+text-decoration:none;
+font-weight:700;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:.3s;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.cat-card:hover{
+background:#FFD60A;
+color:#111;
+transform:translateY(-6px);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="categories">
+
+<h2>Browse Categories</h2>
+
+<div class="cat-grid">
+
+    <a href="flyers.html" class="cat-card">
+        Flyers
+    </a>
+
+    <a href="logo.html" class="cat-card">
+        Logos
+    </a>
+
+    <a href="brand.html" class="cat-card">
+        Branding
+    </a>
+
+    <a href="social.html" class="cat-card">
+        Social Media
+    </a>
+
+    <a href="package.html" class="cat-card">
+        Packaging
+    </a>
+
+    <a href="portfolio-category.html?category=print-designs" class="cat-card">
+        Print Designs
+    </a>
+
+</div>
+
+</section>
+
+</body>
+</html>

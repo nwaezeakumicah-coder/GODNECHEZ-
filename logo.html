@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo Designs | GODNECHEZ</title>
+
+<style>
+
+:root{
+    --blue:#0057FF;
+    --yellow:#FFD60A;
+    --dark:#111827;
+    --light:#F8FAFC;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Montserrat, Arial;
+}
+
+body{
+    background:var(--light);
+}
+
+/* HEADER */
+header{
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+.logo{
+    font-weight:800;
+    color:var(--blue);
+}
+
+.back{
+    text-decoration:none;
+    color:#111;
+    font-weight:600;
+}
+
+/* HERO */
+.hero{
+    padding:60px 7%;
+    background:linear-gradient(135deg,var(--blue),var(--yellow));
+    color:white;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+/* GRID */
+.grid{
+    padding:20px 7% 80px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.img{
+    height:180px;
+    background:linear-gradient(135deg,var(--blue),var(--yellow));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-weight:700;
+}
+
+/* CONTENT */
+.content{
+    padding:10px;
+}
+
+.actions{
+    display:flex;
+    justify-content:space-between;
+    margin-top:8px;
+}
+
+button{
+    border:none;
+    padding:6px 10px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.like{
+    background:var(--yellow);
+}
+
+.share{
+    background:var(--blue);
+    color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">LOGO DESIGNS</div>
+<a class="back" href="portfolio.html">← Back</a>
+</header>
+
+<section class="hero">
+<h1>Professional Logo Designs</h1>
+<p>Explore modern, luxury, minimalist and corporate logos crafted for brands.</p>
+</section>
+
+<section class="grid" id="grid"></section>
+
+<script>
+
+/* ================= DATA (60 LOGOS) ================= */
+let logos = [];
+
+for(let i=1;i<=60;i++){
+    logos.push({
+        id:i,
+        title:"Logo Concept " + i
+    });
+}
+
+/* ================= RENDER ================= */
+let grid = document.getElementById("grid");
+
+logos.forEach(item=>{
+    let div = document.createElement("div");
+    div.className="card";
+
+    div.innerHTML=`
+        <div class="img">LOGO ${item.id}</div>
+        <div class="content">
+            <h4>${item.title}</h4>
+
+            <div class="actions">
+                <button class="like">Like</button>
+                <button class="share" onclick="share('${item.title}')">Share</button>
+            </div>
+        </div>
+    `;
+
+    grid.appendChild(div);
+});
+
+/* ================= SHARE ================= */
+function share(title){
+    window.open(
+        "https://wa.me/?text=" + encodeURIComponent("Check this logo design: " + title + " from GODNECHEZ")
+    );
+}
+
+</script>
+
+</body>
+</html
